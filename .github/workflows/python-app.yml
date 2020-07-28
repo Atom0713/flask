@@ -37,12 +37,12 @@ jobs:
           password: ${{secrets.DOCKER_PASSWORD}}
           repository: atom13/yayloh
           tag_with_ref: true
-  run_app:
-    container:
-      image: python:2
-      ports:
-        - 8080:80
-      volumes:
-        - atom13/yayloh
-      run: |
-        parser.py
+#  run_app:
+#    container:
+#      image: python:2
+#      ports:
+#        - 8080:80
+#      volumes:
+#        - atom13/yayloh
+#      run: |
+#        parser.py
