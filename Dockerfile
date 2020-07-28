@@ -4,11 +4,10 @@ WORKDIR /user/src/app
 
 COPY app.py .
 COPY requirements.txt .
+COPY start.sh .
 
 RUN pip install --no-cache-dir -r requirements.txt
-
-EXPOSE 3000
-CMD ["./start.sh"]
+ENTRYPOINT ["./start.sh"]
 
 
 
