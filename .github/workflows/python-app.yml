@@ -24,4 +24,9 @@ jobs:
           registry: docker.io
           repository: atom13/yayloh
           tags: v1
+  run_app:
+    container:
+      image: v1
+      ports: 5000
+      options: --net
       
