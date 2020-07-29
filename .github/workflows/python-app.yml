@@ -38,7 +38,7 @@ jobs:
        - name: Build
          run: docker build -t atom13/yayloh:flaskapp .
        - name: Push
-         run: docker push ${{ secrets.DOCKER_USERNAME }}/flaskapp:latest
+         run: docker push ${{ secrets.DOCKER_USERNAME }}/yayloh:flaskapp
 
 
 
