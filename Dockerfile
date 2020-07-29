@@ -1,15 +1,15 @@
-FROM python:3
-# workdirectory within the Docker venv
-WORKDIR /user/src/app
+FROM python:3.6-alpine
 
-COPY app.py .
-COPY requirements.txt .
-COPY start.sh .
+WORKDIR /app
+COPY . /app
 
-RUN pip install --no-cache-dir -r requirements.txt
-ENTRYPOINT ["./start.sh"]
+RUN python -m pip install --upgrade pip
+RUN pip install --no-cache -r requirements.txt
 
+EXPOSE 5000
 
+ENTRYPOINT ["python"]
+CMD ["app.py"]
 
 
 
