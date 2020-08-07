@@ -21,7 +21,7 @@ jobs:
            DOCKER_HUB_REPO: ${{ secrets.DOCKER_HUB_REPO}}
          run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
        - name: docker build app
-         run: docker build -t $DOCKER_HUB_REPO:flaskapp .
+         run: docker build -t flaskapp .
        - name: docker build app
          run: docker build -t mysql:8.0.2 .
        - name: docker push

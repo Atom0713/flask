@@ -2,7 +2,7 @@ version: '3'
 
 services:
   flaskapp:
-    image: atom13/yayloh:flaskapp
+    image: flaskapp
     container_name: flaskapp
     # Build app using Dockerfile in the same directory
     build: .
