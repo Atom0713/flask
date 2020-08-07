@@ -14,9 +14,13 @@ jobs:
      runs-on: ubuntu-latest
      steps:
        - uses: actions/checkout@v1
+       - name: Clean stack
+         run: |
+           docker rm $(docker ps -a -q)
+           docker rmi $(docker images -q)
        - name: Build the docker-compose stack
          run: docker-compose up -d
-       - name: Check running containers
+       - name: Images
          run: docker images
        - name: Check running containers
          run: docker ps -a
@@ -28,7 +32,7 @@ jobs:
        - name: Push
          run: |
            docker push ${{ secrets.DOCKER_USERNAME }}/yayloh:flaskapp
-           docker push ${{ secrets.DOCKER_USERNAME }}/yayloh:mysql
+           docker push ${{ secrets.DOCKER_USERNAME }}/yayloh:mysql:8.0.2
 
 
 
