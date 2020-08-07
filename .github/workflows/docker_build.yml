@@ -21,13 +21,13 @@ jobs:
            DOCKER_HUB_REPO: ${{ secrets.DOCKER_HUB_REPO }}
          run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
        - name: docker build app
-         run: docker build -t flaskapp .
-       - name: docker build app
-         run: docker build -t mysql:8.0.2 .
+         run: docker build -t atom13/yaylohflaskapp .
+#       - name: docker build app
+#         run: docker build -t atom13/yaylohmysql:8.0.2 .
        - name: docker push
          run: |
            docker push atom13/yayloh:flaskapp
-           docker push atom13/yayloh:mysql:8.0.2
+#           docker push atom13/yayloh:mysql:8.0.2
 
 
 
