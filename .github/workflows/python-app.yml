@@ -14,10 +14,6 @@ jobs:
      runs-on: ubuntu-latest
      steps:
        - uses: actions/checkout@v1
-       - name: Clean stack
-         run: |
-           docker rm $(docker ps -a -q)
-           docker rmi $(docker images -q)
        - name: Build the docker-compose stack
          run: docker-compose up -d
        - name: Images
