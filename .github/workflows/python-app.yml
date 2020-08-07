@@ -14,15 +14,21 @@ jobs:
      runs-on: ubuntu-latest
      steps:
        - uses: actions/checkout@v1
+       - name: Build the docker-compose stack
+         run: docker-compose up -d
+       - name: Check running containers
+         run: docker ps -a
        - name: docker login
          env:
            DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
            DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
          run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-       - name: docker build app
-         run: docker build -t atom13/yayloh:flaskapp .
-       - name: Push
-         run: docker push ${{ secrets.DOCKER_USERNAME }}/yayloh:flaskapp
+#       - name: docker build app
+#         run: docker build -t atom13/yayloh:flaskapp .
+#       - name: Push
+#         run: |
+#         docker push ${{ secrets.DOCKER_USERNAME }}/yayloh:flaskapp
+#         docker push ${{ secrets.DOCKER_USERNAME }}/yayloh:flaskapp
 
 
 
