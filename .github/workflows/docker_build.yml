@@ -26,8 +26,8 @@ jobs:
          run: docker build -t mysql:8.0.2 .
        - name: docker push
          run: |
-           docker push $DOCKER_HUB_REPO:flaskapp
-           docker push $DOCKER_HUB_REPO:mysql:8.0.2
+           docker push atom13/yayloh:flaskapp
+           docker push atom13/yayloh:mysql:8.0.2
 
 
 
