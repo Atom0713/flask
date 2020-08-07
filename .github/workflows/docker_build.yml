@@ -15,11 +15,7 @@ jobs:
      steps:
        - uses: actions/checkout@v1
        - name: docker login
-         env:
-           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-           DOCKER_HUB_REPO: ${{ secrets.DOCKER_HUB_REPO }}
-         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+         run: docker login -u ${{ secrets.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_PASSWORD }}
        - name: docker build app
          run: docker build -t atom13/yaylohflaskapp .
 #       - name: docker build app

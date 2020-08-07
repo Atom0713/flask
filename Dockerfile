@@ -10,13 +10,13 @@ EXPOSE 8080
 ENTRYPOINT ["python"]
 CMD ["app.py"]
 
-#FROM mysql:8.0.2
-#ENV MYSQL_ROOT_PASSWORD: 123
-#ENV MYSQL_DATABASE: returns_test
-#ENV MYSQL_USER: yayloh
-#ENV MYSQL_PASSWORD: admin
-#ADD ./scripts/setup.sql /docker-entrypoint-initdb.d
-#EXPOSE 3306
+FROM mysql:8.0.2
+ENV MYSQL_ROOT_PASSWORD: 123
+ENV MYSQL_DATABASE: returns_test
+ENV MYSQL_USER: yayloh
+ENV MYSQL_PASSWORD: admin
+ADD ./scripts/setup.sql /docker-entrypoint-initdb.d
+EXPOSE 3306
 
 
 
