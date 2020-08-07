@@ -28,7 +28,7 @@ jobs:
        - name: Push
          run: |
            docker push ${{ secrets.DOCKER_USERNAME }}/yayloh:flaskapp
-           docker push ${{ secrets.DOCKER_USERNAME }}/yayloh:mysql:8.0.2
+           docker push ${{ secrets.DOCKER_USERNAME }}/mysql:8.0.2:db
 
 
 
