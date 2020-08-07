@@ -18,7 +18,7 @@ jobs:
          env:
            DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
            DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-           DOCKER_HUB_REPO: ${{ secrets.DOCKER_HUB_REPO}}
+           DOCKER_HUB_REPO: ${{ secrets.DOCKER_HUB_REPO }}
          run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
        - name: docker build app
          run: docker build -t flaskapp .
@@ -26,8 +26,8 @@ jobs:
          run: docker build -t mysql:8.0.2 .
        - name: docker push
          run: |
-           docker push $DOCKER_HUB_REPO:flaskapp
-           docker push $DOCKER_HUB_REPO:mysql:8.0.2
+           docker push ${{ secrets.DOCKER_HUB_REPO }}:flaskapp
+           docker push ${{ secrets.DOCKER_HUB_REPO }}:mysql:8.0.2
 
 
 
