@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  flaskapp:
+    image: yayloh:flaskapp
+    container_name: flaskapp
+    # Build app using Dockerfile in the same directory
+    build: .
+    volumes:
+      - ./:/flaskapp
+    ports:
+      - '8080:8080'
+    expose:
+      - '8080'
+    depends_on:
+      - mysql_database
+
+  mysql_database:
+    image: mysql:8.0.2
+    container_name: mysql
+    volumes:
+      - ./scripts:/docker-entrypoint-initdb.d/
+    environment:
+      #set password
+      MYSQL_ROOT_PASSWORD: 123
+      MYSQL_DATABASE: returns_test
+    ports:
+    - "3308:3306"
+    expose:
+      - '3308'
+
+#  test_db:
+#    image: yayloh:test_db
+#    environment:
+#      MYSQL_ROOT_ASSWORD: 123
+#    ports:
+#    - "3306:3306"
