@@ -20,6 +20,8 @@ jobs:
          run: docker images
        - name: Check running containers
          run: docker ps
+       - name: Check logs
+         run: doocker logs flaskapp
        - name: docker login
          env:
            DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
