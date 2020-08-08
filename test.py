@@ -1,11 +1,10 @@
 # import os
-import unittest
-from app import app
+# from app import app
 
 from tests.test_view import TestView
 
-app.testing = True
-app = app.test_client()
+# app.testing = True
+# app = app.test_client()
 # db_url = os.environ.get("DATABASE_URL")
 # app.config['SQLALCHEMY_DATABASE_URI'] = db_url
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -13,6 +12,7 @@ app = app.test_client()
 # with app.app_context():
 #     db.create_all()
 
+import unittest
 order_view = unittest.TestLoader().loadTestsFromTestCase(TestView)
 
 suite = [

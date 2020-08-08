@@ -1,10 +1,9 @@
 import unittest
-# from test import app
-from app import app
-
+from dashboard import create_app
 
 class TestView(unittest.TestCase):
     def setUp(self):
+        app = create_app()
         app.testing = True
         self.app = app.test_client()
     # executed after each test
