@@ -1,0 +1,12 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  run_tests:
+    - uses: actions/checkout@v1
+    - name: Build flask app and run unittests

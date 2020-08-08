@@ -14,4 +14,4 @@ class TestView(unittest.TestCase):
     def test_index(self):
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(b'{"message":"Server is running!","status":"ok"}\n', response.data)
+        self.assertEqual(b'{"message":"Server is running!","status":"flask"}\n', response.data)

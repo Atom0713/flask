@@ -20,18 +20,20 @@ jobs:
          run: docker images
        - name: Check running containers
          run: docker ps
+       - name: Check all processes
+         run: docker ps -a
        - name: Check logs
          run: doocker logs flaskapp
-       - name: docker login
-         env:
-           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
-         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-       - name: Push
-         run: |
-           VERSION=$(date +%s)
-           docker push ${{ secrets.DOCKER_USERNAME }}/yayloh:flaskapp_${VERSION}
-#           docker push ${{ secrets.DOCKER_USERNAME }}/mysql:8.0.2:db
+#       - name: docker login
+#         env:
+#           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+#           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+#         run: docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
+#       - name: Push
+#         run: |
+#           VERSION=$(date +%s)
+#           docker push ${{ secrets.DOCKER_USERNAME }}/yayloh:flaskapp_${VERSION}
+##           docker push ${{ secrets.DOCKER_USERNAME }}/mysql:8.0.2:db
 
 
 
