@@ -10,10 +10,11 @@ on:
     branches: [ master ]
 
 jobs:
-  ci_cd:
+  build:
      runs-on: ubuntu-latest
      steps:
-       - uses: actions/checkout@v1
+       - name: Checkout
+       - uses: actions/checkout@v2
        - name: Build the docker-compose stack
          run: docker-compose up -d
        - name: Images
@@ -21,9 +22,11 @@ jobs:
        - name: Check running containers
          run: docker ps
        - name: Check all processes
-         run: docker ps -a
+         run: docker-compose ps -a
        - name: Check logs
-         run: doocker logs flaskapp
+         run: doocker-compose logs flaskapp
+       - name: Test with pytest
+         run: docker-compose exec -T flaskapp pytest
 #       - name: docker login
 #         env:
 #           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}

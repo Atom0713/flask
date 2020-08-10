@@ -9,6 +9,7 @@ COPY . /flaskapp
 #    && apk add --no-cache mariadb-dev
 #RUN pip3 install PyMySQL
 RUN python -m pip install --upgrade pip && pip install --no-cache -r requirements.txt
+RUN pip install pytest pytest-cov
 #RUN apk del build-deps
 
 ENTRYPOINT ["python"]
