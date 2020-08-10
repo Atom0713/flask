@@ -1,4 +1,5 @@
-from tests.test_view import TestView
+from tests.test_order.test_view import TestView
+from tests.test_order.test_controller import TestOrderController
 
 # app.testing = True
 # app = app.test_client()
@@ -11,9 +12,11 @@ from tests.test_view import TestView
 
 import unittest
 order_view = unittest.TestLoader().loadTestsFromTestCase(TestView)
+order_controller = unittest.TestLoader().loadTestsFromTestCase(TestOrderController)
 
 suite = [
-    order_view
+    order_view,
+order_controller
          ]
 # CREATE TEST SUITES
 testSuite = unittest.TestSuite(suite)
