@@ -18,4 +18,4 @@ class TestView(unittest.TestCase):
     def test_inde(self):
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(b'{"message":"Server is running!","status":"flask"}\n', response.data)
+        self.assertEqual(b'{"message":"erver is running!","status":"flask"}\n', response.data)
