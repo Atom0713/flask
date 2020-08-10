@@ -19,11 +19,9 @@ jobs:
        - name: Images
          run: docker images
        - name: Check running containers
-         run: docker ps
+         run: docker-compose ps
        - name: Check all processes
          run: docker-compose ps -a
-       - name: Check logs
-         run: doocker-compose logs flaskapp
        - name: Test with pytest
          run: docker-compose exec -T flaskapp pytest
 #       - name: docker login
