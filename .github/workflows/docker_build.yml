@@ -23,7 +23,7 @@ jobs:
        - name: Check all processes
          run: docker-compose ps -a
        - name: Test with pytest
-         run: docker-compose exec -T flaskapp pytest
+         run: docker-compose exec -T flaskapp pytest /bin/sh
 #       - name: docker login
 #         env:
 #           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}

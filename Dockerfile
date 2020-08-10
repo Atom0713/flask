@@ -13,7 +13,7 @@ RUN pip install pytest pytest-cov
 #RUN apk del build-deps
 
 ENTRYPOINT ["python"]
-CMD ["test.py"]
+CMD ["app.py"]
 
 
 
