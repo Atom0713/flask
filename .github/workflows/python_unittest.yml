@@ -31,6 +31,5 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test
       run: |
-        python test.py
-        # -m pytest --verbosity=2
+        python -m pytest --verbosity=2
 
