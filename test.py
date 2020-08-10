@@ -1,6 +1,3 @@
-# import os
-# from app import app
-
 from tests.test_view import TestView
 
 # app.testing = True
