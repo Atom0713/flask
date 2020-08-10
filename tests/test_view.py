@@ -13,7 +13,7 @@ class TestView(unittest.TestCase):
     def test_index(self):
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
-        self.assertEqual(b'{"Smessage":"Server is running!","status":"flask"}\n', response.data)
+        self.assertEqual(b'{"message":"Server is running!","status":"flask"}\n', response.data)
 
     def test_inde(self):
         response = self.app.get('/')
